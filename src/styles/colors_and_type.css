@@ -1,0 +1,310 @@
+/* ============================================================
+   Sugarbuzz Design System — Tokens
+   ============================================================
+   Import this file. Set `data-theme="dark"` on <html> or <body>
+   to flip to dark mode. The system is built around:
+   - A cool near-neutral gray scale (95% of the UI)
+   - One electric accent: Buzz (magenta, #EC4080)
+   - One warm support accent: Honey (amber, #F59E0B)
+   - Subtle radii (4–16px), restrained shadows, hairline borders
+   ============================================================ */
+
+/* ---- Fonts ---------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ===== Typography ===================================== */
+  --font-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --font-display: 'Geist', ui-sans-serif, system-ui, sans-serif; /* same family, heavier weights */
+  --font-reading: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Geist', ui-sans-serif, system-ui, sans-serif;  /* opt-in alias; no serif in product UI */
+
+  /* Type scale (modular, slightly compressed for UI density) */
+  --text-xs:   11px;   /* micro labels, status badges */
+  --text-sm:   12px;   /* dense table cells, captions */
+  --text-base: 13px;   /* secondary body */
+  --text-md:   14px;   /* default UI body */
+  --text-lg:   16px;   /* emphasized body, card titles */
+  --text-xl:   20px;   /* h3 */
+  --text-2xl:  24px;   /* h2 */
+  --text-3xl:  32px;   /* h1 */
+  --text-4xl:  48px;   /* display */
+
+  --leading-tight:    1.15;
+  --leading-snug:     1.30;
+  --leading-normal:   1.50;
+  --leading-relaxed:  1.65;
+
+  --track-tight:    -0.03em;   /* display */
+  --track-snug:     -0.015em;  /* h2 / h3 */
+  --track-normal:    0em;      /* body */
+  --track-eyebrow:   0.08em;   /* tracked-out ALL CAPS */
+
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* ===== Spacing (4px base) ============================ */
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-7:   28px;
+  --space-8:   32px;
+  --space-9:   40px;
+  --space-10:  48px;
+  --space-11:  64px;
+  --space-12:  96px;
+
+  --gutter-sm: 24px;
+  --gutter-lg: 48px;
+  --container:        1200px;
+  --container-narrow:  720px;
+  --header-h:           56px;
+
+  /* ===== Radii ======================================== */
+  --radius-sm:    4px;
+  --radius:       6px;
+  --radius-md:    8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-pill: 999px;
+
+  /* ===== Motion ======================================= */
+  --dur-fast:  120ms;
+  --dur-base:  200ms;
+  --dur-slow:  280ms;
+  --ease-out:    cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-settle: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* ===== Light theme (default) ========================= */
+  /* Surfaces */
+  --bg-paper:        #FAFAFA;   /* app canvas */
+  --bg-paper-2:      #F4F4F5;   /* darker canvas for inset panels */
+  --bg-paper-trans:  rgba(250, 250, 250, 0.72);  /* sticky header */
+  --surface-1:       #FFFFFF;   /* cards, elevated surfaces */
+  --surface-2:       #F4F4F5;   /* hover / pressed surface */
+  --surface-3:       #E4E4E7;   /* selected / active row */
+
+  /* Foreground (ink) */
+  --fg-1: #09090B;   /* primary text */
+  --fg-2: #52525B;   /* secondary text, icons at rest */
+  --fg-3: #71717A;   /* tertiary, metadata */
+  --fg-4: #A1A1AA;   /* placeholder, disabled */
+
+  /* Borders */
+  --border:        #E4E4E7;   /* default hairline */
+  --border-strong: #D4D4D8;   /* selection, emphasis */
+  --border-subtle: #F0F0F2;   /* in-card dividers */
+
+  /* Buzz — primary accent (electric magenta) */
+  --buzz:        #EC4080;
+  --buzz-hover:  #DB2C70;
+  --buzz-press:  #BE2362;
+  --buzz-soft:   #FCE7F0;    /* tinted background for soft buttons / pills */
+  --buzz-ink:    #FFFFFF;    /* text/icon on solid Buzz */
+  --ember:       #EC4080;    /* alias for cross-system convenience */
+  --ember-hover: #DB2C70;
+  --ember-press: #BE2362;
+  --ember-soft:  #FCE7F0;
+  --ember-ink:   #FFFFFF;
+
+  /* Honey — secondary accent (warm amber) */
+  --honey:       #F59E0B;
+  --honey-soft:  #FEF3C7;
+  --honey-ink:   #1A1209;
+
+  /* Moss — quiet positive (used for "completed" / "synced" knowledge states) */
+  --moss:        #16A34A;
+  --moss-soft:   #DCFCE7;
+  --moss-ink:    #FFFFFF;
+
+  /* Semantic */
+  --danger:        #EF4444;
+  --danger-soft:   #FEE2E2;
+  --warning:       #F59E0B;
+  --warning-soft:  #FEF3C7;
+  --info:          #3B82F6;
+  --info-soft:     #DBEAFE;
+
+  /* Focus ring */
+  --ring:          0 0 0 2px var(--bg-paper), 0 0 0 4px var(--buzz);
+  --shadow-focus:  0 0 0 4px rgba(236, 64, 128, 0.24);
+
+  /* Shadows — neutral cool, layered */
+  --shadow-1: 0 1px 2px rgba(9, 9, 11, 0.04), 0 1px 1px rgba(9, 9, 11, 0.03);
+  --shadow-2: 0 4px 12px rgba(9, 9, 11, 0.06), 0 1px 3px rgba(9, 9, 11, 0.04);
+  --shadow-3: 0 12px 32px rgba(9, 9, 11, 0.08), 0 4px 12px rgba(9, 9, 11, 0.05);
+  --shadow-4: 0 24px 56px rgba(9, 9, 11, 0.14), 0 8px 24px rgba(9, 9, 11, 0.08);
+
+  /* Categorical topic scale (for charts, tags, segments — neutral-leaning) */
+  --topic-1:       #EC4080; --topic-1-soft: #FCE7F0;   /* buzz */
+  --topic-2:       #3B82F6; --topic-2-soft: #DBEAFE;   /* azure */
+  --topic-3:       #16A34A; --topic-3-soft: #DCFCE7;   /* moss */
+  --topic-4:       #F59E0B; --topic-4-soft: #FEF3C7;   /* honey */
+  --topic-5:       #8B5CF6; --topic-5-soft: #EDE9FE;   /* iris */
+
+  color-scheme: light;
+}
+
+/* ===== Dark theme ====================================== */
+[data-theme="dark"], .theme-dark {
+  --bg-paper:        #0A0A0B;   /* canvas */
+  --bg-paper-2:      #060607;   /* inset / deeper */
+  --bg-paper-trans:  rgba(10, 10, 11, 0.72);
+  --surface-1:       #131316;   /* default card */
+  --surface-2:       #1C1C20;   /* hover */
+  --surface-3:       #26262B;   /* selected */
+
+  --fg-1: #FAFAFA;
+  --fg-2: #A1A1AA;
+  --fg-3: #71717A;
+  --fg-4: #52525B;
+
+  --border:        #26262B;
+  --border-strong: #3F3F46;
+  --border-subtle: #1C1C20;
+
+  --buzz:        #F472B6;     /* lighter pink for contrast on dark */
+  --buzz-hover:  #FB8AC4;
+  --buzz-press:  #EC4080;
+  --buzz-soft:   #2A1320;
+  --buzz-ink:    #0A0A0B;
+  --ember:       #F472B6;
+  --ember-hover: #FB8AC4;
+  --ember-press: #EC4080;
+  --ember-soft:  #2A1320;
+  --ember-ink:   #0A0A0B;
+
+  --honey:       #FBBF24;
+  --honey-soft:  #2A2010;
+  --honey-ink:   #0A0A0B;
+
+  --moss:        #34D399;
+  --moss-soft:   #0E2A1C;
+  --moss-ink:    #0A0A0B;
+
+  --danger:        #F87171;
+  --danger-soft:   #2A1414;
+  --warning:       #FBBF24;
+  --warning-soft:  #2A2010;
+  --info:          #60A5FA;
+  --info-soft:     #0F1F36;
+
+  --ring:          0 0 0 2px var(--bg-paper), 0 0 0 4px var(--buzz);
+  --shadow-focus:  0 0 0 4px rgba(244, 114, 182, 0.32);
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.45), 0 1px 1px rgba(0, 0, 0, 0.35);
+  --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-3: 0 12px 32px rgba(0, 0, 0, 0.65), 0 4px 12px rgba(0, 0, 0, 0.40);
+  --shadow-4: 0 24px 56px rgba(0, 0, 0, 0.75), 0 8px 24px rgba(0, 0, 0, 0.50);
+
+  --topic-1:       #F472B6; --topic-1-soft: #2A1320;
+  --topic-2:       #60A5FA; --topic-2-soft: #0F1F36;
+  --topic-3:       #34D399; --topic-3-soft: #0E2A1C;
+  --topic-4:       #FBBF24; --topic-4-soft: #2A2010;
+  --topic-5:       #A78BFA; --topic-5-soft: #1F1A2E;
+
+  color-scheme: dark;
+}
+
+/* ===== Auto-dark via OS preference (opt-in helper) ===== */
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="auto"] {
+    --bg-paper:        #0A0A0B;
+    --bg-paper-2:      #060607;
+    --bg-paper-trans:  rgba(10, 10, 11, 0.72);
+    --surface-1:       #131316;
+    --surface-2:       #1C1C20;
+    --surface-3:       #26262B;
+    --fg-1: #FAFAFA; --fg-2: #A1A1AA; --fg-3: #71717A; --fg-4: #52525B;
+    --border: #26262B; --border-strong: #3F3F46; --border-subtle: #1C1C20;
+    --buzz: #F472B6; --buzz-hover: #FB8AC4; --buzz-press: #EC4080;
+    --buzz-soft: #2A1320; --buzz-ink: #0A0A0B;
+    color-scheme: dark;
+  }
+}
+
+/* ===== Base resets (opt-in) ============================ */
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+  color: var(--fg-1);
+  background: var(--bg-paper);
+  font-feature-settings: 'cv11', 'ss01', 'ss03';   /* Geist stylistic alts: straighter digits, single-storey a */
+}
+
+/* ===== Semantic typography helpers ===================== */
+.sb-display {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-tight);
+  line-height: var(--leading-tight);
+  color: var(--fg-1);
+}
+.sb-h1 {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--track-tight);
+  line-height: var(--leading-tight);
+  color: var(--fg-1);
+}
+.sb-h2 {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--track-snug);
+  line-height: var(--leading-snug);
+  color: var(--fg-1);
+}
+.sb-h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--track-snug);
+  line-height: var(--leading-snug);
+  color: var(--fg-1);
+}
+.sb-body {
+  font-size: var(--text-md);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--fg-1);
+}
+.sb-body-secondary {
+  font-size: var(--text-md);
+  color: var(--fg-2);
+  line-height: var(--leading-normal);
+}
+.sb-caption {
+  font-size: var(--text-sm);
+  color: var(--fg-3);
+  line-height: var(--leading-normal);
+}
+.sb-eyebrow {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.sb-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0;
+}
+.sb-num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===== Focus ring utility ============================== */
+.sb-focus:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+}

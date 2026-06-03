@@ -1,0 +1,277 @@
+/* ============================================================
+   Sugarbuzz — alternate color schemes
+   ============================================================
+   Apply ONE of these classes to <html>, <body>, or any wrapper to
+   re-skin the entire Sugarbuzz token system. Add `.dark` to the
+   same element for the dark variant of that scheme.
+
+   Each scheme overrides only the tokens that need to shift —
+   primary accent (--buzz family), warm support (--honey family),
+   and where warranted, neutrals + categorical chart colors.
+   ============================================================ */
+
+/* ============================================================
+   1 · BUZZ  (the existing system — electric magenta + honey)
+   Mood: electric, playful. Default Sugarbuzz.
+   ============================================================ */
+.theme-buzz {
+  --buzz:        #EC4080;
+  --buzz-hover:  #DB2C70;
+  --buzz-press:  #BE2362;
+  --buzz-soft:   #FCE7F0;
+  --buzz-ink:    #FFFFFF;
+  --ember: var(--buzz); --ember-hover: var(--buzz-hover); --ember-press: var(--buzz-press); --ember-soft: var(--buzz-soft); --ember-ink: var(--buzz-ink);
+  --honey:       #F59E0B;
+  --honey-soft:  #FEF3C7;
+  --honey-ink:   #1A1209;
+  --shadow-focus: 0 0 0 4px rgba(236, 64, 128, 0.24);
+  --ring: 0 0 0 2px var(--bg-paper), 0 0 0 4px var(--buzz);
+}
+.theme-buzz.dark {
+  --bg-paper: #0A0A0B; --bg-paper-2: #060607;
+  --surface-1: #131316; --surface-2: #1C1C20; --surface-3: #26262B;
+  --fg-1: #FAFAFA; --fg-2: #A1A1AA; --fg-3: #71717A; --fg-4: #52525B;
+  --border: #26262B; --border-strong: #3F3F46; --border-subtle: #1C1C20;
+  --buzz: #F472B6; --buzz-hover: #FB8AC4; --buzz-press: #EC4080;
+  --buzz-soft: #2A1320; --buzz-ink: #0A0A0B;
+  --ember: var(--buzz); --ember-hover: var(--buzz-hover); --ember-press: var(--buzz-press); --ember-soft: var(--buzz-soft); --ember-ink: var(--buzz-ink);
+  --honey: #FBBF24; --honey-soft: #2A2010; --honey-ink: #0A0A0B;
+  --shadow-focus: 0 0 0 4px rgba(244, 114, 182, 0.32);
+}
+
+/* ============================================================
+   2 · STASH  (terracotta + deep teal on warm stone)
+   Mood: warm storeroom — labels, kraft paper, sharpie ink.
+   Made for Stash: the QR/storage-bin app.
+   ============================================================ */
+.theme-stash {
+  --buzz:        #C2410C;        /* terracotta */
+  --buzz-hover:  #9A330A;
+  --buzz-press:  #7A2808;
+  --buzz-soft:   #FBE4D5;
+  --buzz-ink:    #FFFFFF;
+  --ember: var(--buzz); --ember-hover: var(--buzz-hover); --ember-press: var(--buzz-press); --ember-soft: var(--buzz-soft); --ember-ink: var(--buzz-ink);
+  --honey:       #0F766E;        /* deep teal — labels-and-files */
+  --honey-soft:  #CCFBF1;
+  --honey-ink:   #FFFFFF;
+
+  /* warm stone neutrals */
+  --bg-paper:        #FAF8F4;
+  --bg-paper-2:      #F0EBE3;
+  --bg-paper-trans:  rgba(250, 248, 244, 0.78);
+  --surface-1:       #FFFFFF;
+  --surface-2:       #F0EBE3;
+  --surface-3:       #E4DDD0;
+  --fg-1: #1F1B16; --fg-2: #524A3D; --fg-3: #7C7261; --fg-4: #ADA290;
+  --border:        #E4DDD0;
+  --border-strong: #C5BBA8;
+  --border-subtle: #EFE9DE;
+
+  --moss: #4D7C0F; --moss-soft: #E8F2D8; --moss-ink: #FFFFFF;
+
+  --topic-1: #C2410C; --topic-1-soft: #FBE4D5;
+  --topic-2: #0F766E; --topic-2-soft: #CCFBF1;
+  --topic-3: #7C2D12; --topic-3-soft: #FBEEE3;
+  --topic-4: #B45309; --topic-4-soft: #FEF3C7;
+  --topic-5: #4D7C0F; --topic-5-soft: #E8F2D8;
+
+  --shadow-focus: 0 0 0 4px rgba(194, 65, 12, 0.24);
+  --ring: 0 0 0 2px var(--bg-paper), 0 0 0 4px var(--buzz);
+}
+.theme-stash.dark {
+  --bg-paper: #1A1612; --bg-paper-2: #100D0A;
+  --bg-paper-trans: rgba(26, 22, 18, 0.78);
+  --surface-1: #221E18; --surface-2: #2C2620; --surface-3: #38312A;
+  --fg-1: #F5EFE6; --fg-2: #B5A993; --fg-3: #847A6A; --fg-4: #5C5446;
+  --border: #2C2620; --border-strong: #463E33; --border-subtle: #221E18;
+  --buzz: #FB923C; --buzz-hover: #FCA85A; --buzz-press: #EA580C;
+  --buzz-soft: #2D1B0F; --buzz-ink: #1A1612;
+  --ember: var(--buzz); --ember-hover: var(--buzz-hover); --ember-press: var(--buzz-press); --ember-soft: var(--buzz-soft); --ember-ink: var(--buzz-ink);
+  --honey: #2DD4BF; --honey-soft: #0E2926; --honey-ink: #0A0A0B;
+  --moss: #A3E635; --moss-soft: #1A2A09; --moss-ink: #0A0A0B;
+  --shadow-focus: 0 0 0 4px rgba(251, 146, 60, 0.32);
+}
+
+/* ============================================================
+   3 · VOLTAGE  (lime + orange on cool charcoal)
+   Mood: athletic, kinetic — go-energy, exertion warmth.
+   Made for Daily Rep Tracker.
+   ============================================================ */
+.theme-voltage {
+  --buzz:        #65A30D;        /* lime-700 — disciplined volt */
+  --buzz-hover:  #4D7C0F;
+  --buzz-press:  #3F6212;
+  --buzz-soft:   #ECFCCB;
+  --buzz-ink:    #FFFFFF;
+  --ember: var(--buzz); --ember-hover: var(--buzz-hover); --ember-press: var(--buzz-press); --ember-soft: var(--buzz-soft); --ember-ink: var(--buzz-ink);
+  --honey:       #EA580C;        /* orange-600 */
+  --honey-soft:  #FFEDD5;
+  --honey-ink:   #FFFFFF;
+
+  /* keep default cool zinc neutrals — they suit volt */
+
+  --moss: #65A30D; --moss-soft: #ECFCCB; --moss-ink: #FFFFFF;
+
+  --topic-1: #65A30D; --topic-1-soft: #ECFCCB;
+  --topic-2: #EA580C; --topic-2-soft: #FFEDD5;
+  --topic-3: #0EA5E9; --topic-3-soft: #E0F2FE;
+  --topic-4: #FACC15; --topic-4-soft: #FEF9C3;
+  --topic-5: #DC2626; --topic-5-soft: #FEE2E2;
+
+  --shadow-focus: 0 0 0 4px rgba(101, 163, 13, 0.30);
+  --ring: 0 0 0 2px var(--bg-paper), 0 0 0 4px var(--buzz);
+}
+.theme-voltage.dark {
+  --bg-paper: #0A0A0B; --bg-paper-2: #060607;
+  --surface-1: #131316; --surface-2: #1C1C20; --surface-3: #26262B;
+  --fg-1: #FAFAFA; --fg-2: #A1A1AA; --fg-3: #71717A; --fg-4: #52525B;
+  --border: #26262B; --border-strong: #3F3F46; --border-subtle: #1C1C20;
+  --buzz: #A3E635; --buzz-hover: #BEF264; --buzz-press: #84CC16;
+  --buzz-soft: #1A2A09; --buzz-ink: #0A0A0B;
+  --ember: var(--buzz); --ember-hover: var(--buzz-hover); --ember-press: var(--buzz-press); --ember-soft: var(--buzz-soft); --ember-ink: var(--buzz-ink);
+  --honey: #FB923C; --honey-soft: #2C160A; --honey-ink: #0A0A0B;
+  --moss: #A3E635; --moss-soft: #1A2A09; --moss-ink: #0A0A0B;
+  --shadow-focus: 0 0 0 4px rgba(163, 230, 53, 0.36);
+}
+
+/* ============================================================
+   4 · COBALT  (cobalt blue + cyan on cool slate)
+   Mood: technical, focused, calm. Engineering / dev tools.
+   ============================================================ */
+.theme-cobalt {
+  --buzz:        #2563EB;        /* blue-600 */
+  --buzz-hover:  #1D4ED8;
+  --buzz-press:  #1E40AF;
+  --buzz-soft:   #DBEAFE;
+  --buzz-ink:    #FFFFFF;
+  --ember: var(--buzz); --ember-hover: var(--buzz-hover); --ember-press: var(--buzz-press); --ember-soft: var(--buzz-soft); --ember-ink: var(--buzz-ink);
+  --honey:       #0891B2;        /* cyan-600 */
+  --honey-soft:  #CFFAFE;
+  --honey-ink:   #FFFFFF;
+
+  /* cool slate neutrals */
+  --bg-paper:        #F8FAFC;
+  --bg-paper-2:      #F1F5F9;
+  --bg-paper-trans:  rgba(248, 250, 252, 0.78);
+  --surface-1:       #FFFFFF;
+  --surface-2:       #F1F5F9;
+  --surface-3:       #E2E8F0;
+  --fg-1: #0F172A; --fg-2: #475569; --fg-3: #64748B; --fg-4: #94A3B8;
+  --border:        #E2E8F0;
+  --border-strong: #CBD5E1;
+  --border-subtle: #F1F5F9;
+
+  --moss: #059669; --moss-soft: #D1FAE5; --moss-ink: #FFFFFF;
+
+  --topic-1: #2563EB; --topic-1-soft: #DBEAFE;
+  --topic-2: #0891B2; --topic-2-soft: #CFFAFE;
+  --topic-3: #6366F1; --topic-3-soft: #E0E7FF;
+  --topic-4: #059669; --topic-4-soft: #D1FAE5;
+  --topic-5: #475569; --topic-5-soft: #E2E8F0;
+
+  --shadow-focus: 0 0 0 4px rgba(37, 99, 235, 0.24);
+  --ring: 0 0 0 2px var(--bg-paper), 0 0 0 4px var(--buzz);
+}
+.theme-cobalt.dark {
+  --bg-paper: #0B1120; --bg-paper-2: #060A14;
+  --bg-paper-trans: rgba(11, 17, 32, 0.78);
+  --surface-1: #131A2B; --surface-2: #1B2336; --surface-3: #252E43;
+  --fg-1: #F1F5F9; --fg-2: #94A3B8; --fg-3: #64748B; --fg-4: #475569;
+  --border: #1B2336; --border-strong: #334155; --border-subtle: #131A2B;
+  --buzz: #60A5FA; --buzz-hover: #93C5FD; --buzz-press: #3B82F6;
+  --buzz-soft: #0F1F36; --buzz-ink: #0B1120;
+  --ember: var(--buzz); --ember-hover: var(--buzz-hover); --ember-press: var(--buzz-press); --ember-soft: var(--buzz-soft); --ember-ink: var(--buzz-ink);
+  --honey: #22D3EE; --honey-soft: #062A33; --honey-ink: #0A0A0B;
+  --moss: #34D399; --moss-soft: #0E2A1C; --moss-ink: #0A0A0B;
+  --shadow-focus: 0 0 0 4px rgba(96, 165, 250, 0.32);
+}
+
+/* ============================================================
+   5 · IRIS  (violet + marigold on cool zinc)
+   Mood: jewel-toned, considered, slightly literary.
+   ============================================================ */
+.theme-iris {
+  --buzz:        #7C3AED;        /* violet-600 */
+  --buzz-hover:  #6D28D9;
+  --buzz-press:  #5B21B6;
+  --buzz-soft:   #EDE9FE;
+  --buzz-ink:    #FFFFFF;
+  --ember: var(--buzz); --ember-hover: var(--buzz-hover); --ember-press: var(--buzz-press); --ember-soft: var(--buzz-soft); --ember-ink: var(--buzz-ink);
+  --honey:       #F59E0B;        /* marigold */
+  --honey-soft:  #FEF3C7;
+  --honey-ink:   #1A1209;
+
+  /* cool zinc default neutrals */
+
+  --topic-1: #7C3AED; --topic-1-soft: #EDE9FE;
+  --topic-2: #F59E0B; --topic-2-soft: #FEF3C7;
+  --topic-3: #DB2777; --topic-3-soft: #FCE7F3;
+  --topic-4: #0891B2; --topic-4-soft: #CFFAFE;
+  --topic-5: #525252; --topic-5-soft: #E5E5E5;
+
+  --shadow-focus: 0 0 0 4px rgba(124, 58, 237, 0.28);
+  --ring: 0 0 0 2px var(--bg-paper), 0 0 0 4px var(--buzz);
+}
+.theme-iris.dark {
+  --bg-paper: #0A0A0B; --bg-paper-2: #060607;
+  --surface-1: #131316; --surface-2: #1C1C20; --surface-3: #26262B;
+  --fg-1: #FAFAFA; --fg-2: #A1A1AA; --fg-3: #71717A; --fg-4: #52525B;
+  --border: #26262B; --border-strong: #3F3F46; --border-subtle: #1C1C20;
+  --buzz: #A78BFA; --buzz-hover: #C4B5FD; --buzz-press: #8B5CF6;
+  --buzz-soft: #1F1A2E; --buzz-ink: #0A0A0B;
+  --ember: var(--buzz); --ember-hover: var(--buzz-hover); --ember-press: var(--buzz-press); --ember-soft: var(--buzz-soft); --ember-ink: var(--buzz-ink);
+  --honey: #FBBF24; --honey-soft: #2A2010; --honey-ink: #0A0A0B;
+  --shadow-focus: 0 0 0 4px rgba(167, 139, 250, 0.32);
+}
+
+/* ============================================================
+   6 · SAGE  (sage + dusty clay on warm stone)
+   Mood: calm, muted, daily-driver — gentle and considered.
+   ============================================================ */
+.theme-sage {
+  --buzz:        #5C7A5E;        /* muted sage */
+  --buzz-hover:  #4A6249;
+  --buzz-press:  #3A4D39;
+  --buzz-soft:   #E3EBE0;
+  --buzz-ink:    #FFFFFF;
+  --ember: var(--buzz); --ember-hover: var(--buzz-hover); --ember-press: var(--buzz-press); --ember-soft: var(--buzz-soft); --ember-ink: var(--buzz-ink);
+  --honey:       #C97A6B;        /* dusty clay */
+  --honey-soft:  #F5E0DA;
+  --honey-ink:   #FFFFFF;
+
+  /* warm stone neutrals */
+  --bg-paper:        #FBF9F5;
+  --bg-paper-2:      #F2EEE6;
+  --bg-paper-trans:  rgba(251, 249, 245, 0.78);
+  --surface-1:       #FFFFFF;
+  --surface-2:       #F2EEE6;
+  --surface-3:       #E6E0D3;
+  --fg-1: #1F1D17; --fg-2: #524E40; --fg-3: #7C7762; --fg-4: #AAA48E;
+  --border:        #E6E0D3;
+  --border-strong: #CCC4B3;
+  --border-subtle: #F0EBE2;
+
+  --moss: #5C7A5E; --moss-soft: #E3EBE0; --moss-ink: #FFFFFF;
+
+  --topic-1: #5C7A5E; --topic-1-soft: #E3EBE0;
+  --topic-2: #C97A6B; --topic-2-soft: #F5E0DA;
+  --topic-3: #8B7355; --topic-3-soft: #EFE6D7;
+  --topic-4: #6B7B8C; --topic-4-soft: #DDE4EA;
+  --topic-5: #A89968; --topic-5-soft: #EEE7D0;
+
+  --shadow-focus: 0 0 0 4px rgba(92, 122, 94, 0.24);
+  --ring: 0 0 0 2px var(--bg-paper), 0 0 0 4px var(--buzz);
+}
+.theme-sage.dark {
+  --bg-paper: #161814; --bg-paper-2: #0F110D;
+  --bg-paper-trans: rgba(22, 24, 20, 0.78);
+  --surface-1: #1D1F1A; --surface-2: #262924; --surface-3: #31342E;
+  --fg-1: #EFEDE5; --fg-2: #B0AE9A; --fg-3: #82806E; --fg-4: #58574A;
+  --border: #262924; --border-strong: #3F4239; --border-subtle: #1D1F1A;
+  --buzz: #8FAA90; --buzz-hover: #A8C0A9; --buzz-press: #5C7A5E;
+  --buzz-soft: #1B231C; --buzz-ink: #0F110D;
+  --ember: var(--buzz); --ember-hover: var(--buzz-hover); --ember-press: var(--buzz-press); --ember-soft: var(--buzz-soft); --ember-ink: var(--buzz-ink);
+  --honey: #E8A293; --honey-soft: #2E1A14; --honey-ink: #0F110D;
+  --moss: #8FAA90; --moss-soft: #1B231C; --moss-ink: #0F110D;
+  --shadow-focus: 0 0 0 4px rgba(143, 170, 144, 0.32);
+}
