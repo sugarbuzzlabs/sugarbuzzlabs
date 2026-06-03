@@ -241,7 +241,10 @@ export function AppSection({ app, index, dark }) {
 
 export function Gallery({ dark }) {
   const shots = [];
-  APPS.forEach((app) => app.screens.forEach((screen, index) => shots.push({ app, screen, index })));
+  APPS.forEach((app) => {
+    const screens = app.galleryScreens || app.screens;
+    screens.forEach((screen, index) => shots.push({ app, screen, index }));
+  });
 
   return (
     <section className="section-tight" style={{ background: 'var(--bg-paper-2)', borderBlock: '1px solid var(--border)' }}>

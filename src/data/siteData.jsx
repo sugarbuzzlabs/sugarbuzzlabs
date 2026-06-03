@@ -296,16 +296,33 @@ export const APPS = [
     name: 'Base Hitz',
     category: 'Youth sports',
     icon: 'baseball',
-    status: { live: true, label: 'Available on iOS' },
+    status: { live: true, label: 'Now available on iOS' },
     headline: 'Walk-up music for every at-bat.',
-    lede: 'Give young players the big-league moment. Assign a walk-up song to each kid, follow the batting order in real time, and run warm-up music, inning breaks, and sound effects - all from your phone.',
+    lede: 'Give your players the big-league experience. Base Hitz lets parents and coaches play personalized walk-up songs, inning break music, warm-up tracks, and sound effects - right from your phone.',
     features: [
-      { icon: 'music', title: 'Walk-up songs', desc: 'Any track from your music library, set to start at the exact right second.' },
-      { icon: 'play', title: 'Game Day mode', desc: 'The right song fires for the current batter, with on-deck always in view.' },
-      { icon: 'speaker', title: 'Stadium audio', desc: 'Warm-up and inning-break playlists that auto-stop after a set duration.' },
-      { icon: 'megaphone', title: 'Soundboard', desc: 'One-tap sound effects with automatic ducking of the background music.' },
+      { icon: 'music', title: 'Walk-Up Songs', desc: 'Assign a personalized walk-up song to every player. Pick any song from your music library and set the exact start time for maximum hype.' },
+      { icon: 'play', title: 'Game Day Mode', desc: 'Follow your batting order in real time. Tap play and the right song fires for the current batter, with On Deck always visible.' },
+      { icon: 'speaker', title: 'Stadium Audio', desc: 'Keep the energy up with Warm-Up and Inning Break playlists that auto-stop after a configurable duration.' },
+      { icon: 'megaphone', title: 'Soundboard', desc: 'Trigger instant sound effects with one tap. Audio ducking automatically lowers background music when an effect plays.' },
+      { icon: 'users', title: 'Team Roster', desc: 'Build full team rosters with player names, jersey numbers, photos, and individual walk-up songs.' },
+      { icon: 'list', title: 'Flexible Lineups', desc: 'Create a new lineup for every game. Drag and drop the batting order, and each player song travels with them.' },
     ],
-    screens: [{ node: 'roster' }, { node: 'gameday' }],
+    screens: [
+      { src: '/assets/screens/basehitz/screen-roster.png' },
+      { src: '/assets/screens/basehitz/screen-gameday-batting.png' },
+      { src: '/assets/screens/basehitz/screen-stadium.png' },
+    ],
+    galleryScreens: [
+      { src: '/assets/screens/basehitz/screen-gameday-batting.png' },
+      { src: '/assets/screens/basehitz/screen-roster.png' },
+      { src: '/assets/screens/basehitz/screen-lineup-order.png' },
+      { src: '/assets/screens/basehitz/screen-gameday-1.png' },
+      { src: '/assets/screens/basehitz/screen-stadium.png' },
+      { src: '/assets/screens/basehitz/screen-edit-player.png' },
+      { src: '/assets/screens/basehitz/screen-gameday-select.png' },
+      { src: '/assets/screens/basehitz/screen-settings.png' },
+      { src: '/assets/screens/basehitz/screen-gameday-2.png' },
+    ],
   },
 ];
 
@@ -320,6 +337,6 @@ export const FAQS = [
 
 export const PRICING = [
   { name: 'DailySet', cat: 'Fitness & habits', amt: 'One-time', note: 'A simple purchase at launch. No subscription, no in-app upsells.', cta: 'Coming soon', live: false },
-  { name: 'Base Hitz', cat: 'Youth sports', amt: 'Free', note: 'Free to download on the App Store. Works with your Apple Music library.', cta: 'Available on iOS', live: true, featured: true },
+  { name: 'Base Hitz', cat: 'Youth sports', amt: 'Free', note: 'Free to download on the App Store. Works with your existing Apple Music library.', cta: 'Available on iOS', live: true, featured: true },
   { name: 'Stash', cat: 'Home & storage', amt: 'One-time', note: 'Buy once and organize everything. Your data never leaves your phone.', cta: 'Coming soon', live: false },
 ];
