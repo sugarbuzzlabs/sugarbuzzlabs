@@ -512,11 +512,21 @@ button { font-family: inherit; }
 .wl-chip[aria-pressed="true"] { background: var(--buzz-soft); border-color: color-mix(in oklab, var(--buzz) 45%, transparent); color: var(--buzz); }
 .wl-chip[aria-pressed="true"] .ck { opacity: 1; }
 .wl-note { font-size: 12.5px; color: var(--fg-3); margin-top: 16px; }
-.wl-success { display: flex; align-items: center; gap: 14px; margin-top: 24px; padding: 16px 18px; border-radius: var(--radius-md); background: var(--moss-soft); border: 1px solid color-mix(in oklab, var(--moss) 35%, transparent); }
-.wl-success .ck-circle { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--moss); color: var(--moss-ink); display: grid; place-items: center; }
+.wl-success {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  background: #DCFCE7;
+  border: 1px solid #86EFAC;
+  color: #052E16;
+}
+.wl-success .ck-circle { flex: none; width: 30px; height: 30px; border-radius: 50%; background: #16A34A; color: #FFFFFF; display: grid; place-items: center; }
 .wl-success .ck-circle svg { width: 18px; height: 18px; }
-.wl-success .wl-s-t { font-weight: var(--weight-semibold); font-size: 15px; }
-.wl-success .wl-s-d { font-size: 13px; color: var(--fg-2); }
+.wl-success .wl-s-t { font-weight: var(--weight-semibold); font-size: 15px; color: #052E16; }
+.wl-success .wl-s-d { font-size: 13px; color: #166534; }
 
 /* ---- FAQ ---------------------------------------------- */
 .faq-list { border-top: 1px solid var(--border); margin-top: 36px; }
