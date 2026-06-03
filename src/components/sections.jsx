@@ -372,6 +372,7 @@ export function Waitlist() {
     const chosen = Object.keys(picks).filter((key) => picks[key]);
     const payload = new URLSearchParams();
     payload.set('form-name', 'sugarbuzz-waitlist');
+    payload.set('bot-field', '');
     payload.set('email', trimmedEmail);
     payload.set('apps', chosen.join(', '));
 
@@ -379,7 +380,7 @@ export function Waitlist() {
     setMessage('');
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: payload.toString(),
@@ -414,8 +415,22 @@ export function Waitlist() {
                 </span>
               </div>
             ) : (
-              <form name="sugarbuzz-waitlist" method="POST" data-netlify="true" onSubmit={submit}>
+              <form
+                name="sugarbuzz-waitlist"
+                method="POST"
+                action="/forms.html"
+                netlify="true"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                onSubmit={submit}
+              >
                 <input type="hidden" name="form-name" value="sugarbuzz-waitlist" />
+                <p hidden>
+                  <label>
+                    Do not fill this out:
+                    <input name="bot-field" tabIndex="-1" autoComplete="off" />
+                  </label>
+                </p>
                 <input type="hidden" name="apps" value={Object.keys(picks).filter((key) => picks[key]).join(', ')} />
                 <div className="wl-form">
                   <input

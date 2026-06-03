@@ -1,13 +1,13 @@
 <claude-mem-context>
 # Memory Context
 
-# [SugarbuzzLabsSite] recent context, 2026-06-02 4:31pm EDT
+# [SugarbuzzLabsSite] recent context, 2026-06-02 8:18pm EDT
 
 Legend: 🎯session 🔴bugfix 🟣feature 🔄refactor ✅change 🔵discovery ⚖️decision 🚨security_alert 🔐security_note
 Format: ID TIME TYPE TITLE
 Fetch details: get_observations([IDs]) | Search: mem-search skill
 
-Stats: 15 obs (5,520t read) | 193,311t work | 97% savings
+Stats: 18 obs (6,685t read) | 361,791t work | 98% savings
 
 ### Jun 2, 2026
 1916 2:22p ⚖️ Deployment Architecture Plan: Prototype → Live Site
@@ -21,14 +21,17 @@ Stats: 15 obs (5,520t read) | 193,311t work | 97% savings
 1943 " ⚖️ SugarbuzzLabsSite: Full Vite + Netlify Production Plan Approved
 1944 4:24p 🟣 SugarbuzzLabsSite Implementation Started: Vite Scaffold Phase
 1945 " 🔵 prototype/styles/ Missing colors_and_type.css and site.css
-**1946** " 🟣 **Vite App Scaffold + Netlify Config Created**
-All foundational production files written in one pass. The Netlify Forms hidden form in index.html is required for Netlify's build-time form detection — without it, form POSTs from the React component would be rejected. Security headers added directly in netlify.toml avoid needing a separate _headers file. App.jsx locks in dark mode and removes any tweaks-panel dependency. CSS files (colors_and_type.css, schemes.css, site.css) are imported via src/main.jsx from the src/styles/ directory.
-
+1946 " 🟣 Vite App Scaffold + Netlify Config Created
 1947 " 🟣 src/data/siteData.jsx Created: All Site Data + Shared Components
 1948 " 🟣 src/components/sections.jsx Created: All Page Sections
-**1949** 4:30p 🟣 **Sugarbuzz Labs prototype converted to production Vite/React site with Netlify deploy config**
-The Sugarbuzz Labs site was migrated from a prototype CDN-based bundle (in prototype/) to a production-ready Vite/React app at the repo root. The migration involved scaffolding standard Vite app structure, porting all React components and CSS into src/, centralizing content in src/data/siteData.jsx, and wiring the waitlist form to Netlify Forms (POST with form-name, replacing localStorage). All prototype-only code (tweaks panel, edit mode) was stripped. Dead href="#" links were replaced with either real mailto links or intentionally disabled non-clickable elements. Production metadata (OG tags, favicon, robots, sitemap) was added. The build succeeds cleanly via Vite. Railway deployment was explicitly deferred—Netlify-only is the launch target. Local preview was attempted but blocked by sandbox networking restrictions.
+1968 4:28p ⚖️ SugarbuzzLabsSite pushed to GitHub — next steps for Netlify deploy
+1949 4:30p 🟣 Sugarbuzz Labs prototype converted to production Vite/React site with Netlify deploy config
+**1971** 8:17p 🔵 **Netlify Forms fail on local dev server — expected behavior**
+When the user attempted to submit the waitlist form locally, it failed. This is expected: Netlify Forms works by having Netlify's CDN intercept POST requests to "/" during serving — this interception only happens on Netlify-hosted sites. The local Vite dev server has no such handler. The form submission code POSTs application/x-www-form-urlencoded to "/" with form-name=sugarbuzz-waitlist, which on Netlify gets captured; locally it just hits the dev server root and fails. To test the form, the site must be deployed to Netlify first (a deploy preview from a branch is sufficient).
+
+**1972** 8:18p 🔴 **Netlify Forms 404 Fix — Static Form Definition + /forms.html POST Target**
+Netlify Forms detection requires a static HTML form (with the netlify attribute) present in the deployed HTML at build time. The original implementation only had the form in the React component (client-rendered), which Netlify's scanner cannot detect. Additionally, the fetch POST target was '/', which Netlify does not route as a form handler without a matching static form on that exact page. The fix adds public/forms.html as a permanently deployed static page containing the canonical form definition. The React component's fetch call and form action attribute both now point to '/forms.html', matching Netlify's expected pattern. The honeypot field is wired in both the static definition and the React payload to enable spam filtering.
 
 
-Access 193k tokens of past work via get_observations([IDs]) or mem-search skill.
+Access 362k tokens of past work via get_observations([IDs]) or mem-search skill.
 </claude-mem-context>
