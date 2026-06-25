@@ -1,0 +1,41 @@
+name: Homelab preview deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: homelab-preview
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux, x64, homelab, lab, sugarbuzzlabs]
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out site
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Deploy to preview directory
+        run: |
+          test -d dist
+          rsync -a --delete dist/ /srv/sugarbuzzlabs/
+          date -u +"deployed_at=%Y-%m-%dT%H:%M:%SZ" > /srv/sugarbuzzlabs/.deploy-info
+          printf "Preview deployed to /srv/sugarbuzzlabs\n"
