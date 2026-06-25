@@ -1,13 +1,13 @@
 <claude-mem-context>
 # Memory Context
 
-# [SugarbuzzLabsSite] recent context, 2026-06-02 8:47pm EDT
+# [SugarbuzzLabsSite] recent context, 2026-06-20 10:29am EDT
 
 Legend: 🎯session 🔴bugfix 🟣feature 🔄refactor ✅change 🔵discovery ⚖️decision 🚨security_alert 🔐security_note
 Format: ID TIME TYPE TITLE
 Fetch details: get_observations([IDs]) | Search: mem-search skill
 
-Stats: 32 obs (10,441t read) | 459,999t work | 98% savings
+Stats: 35 obs (11,099t read) | 468,161t work | 98% savings
 
 ### Jun 2, 2026
 1916 2:22p ⚖️ Deployment Architecture Plan: Prototype → Live Site
@@ -40,12 +40,16 @@ Stats: 32 obs (10,441t read) | 459,999t work | 98% savings
 1990 " 🟣 Base Hitz content updated in siteData.jsx to match live product
 1989 " 🟣 All Base Hitz screenshots downloaded — asset set complete
 1991 " 🟣 Gallery component updated to prefer galleryScreens over screens
-**1992** 8:47p 🟣 **Build passes after Base Hitz content update**
-Build clean after all Base Hitz changes (siteData.jsx expanded features/screens/galleryScreens, sections.jsx Gallery fallback logic). Ready to git push.
+1992 8:47p 🟣 Build passes after Base Hitz content update
+1993 " 🔵 Preview server not running after rebuild — needs restart before asset verification
+1994 " 🟣 Base Hitz PNG assets verified serving from preview server
+### Jun 6, 2026
+**2177** 3:26p ⚖️ **GitHub Repo Naming Convention for SugarBuzzLabs**
+User is setting up a new GitHub organization for SugarBuzzLabs LLC and researching repo naming conventions. Key question: how to encode platform type into repo names. Common patterns include suffixes like `-web`, `-ios`, `-macos`, `-api`, or prefixes like `sugarbuzzlabs.web.*`. C# ecosystem often uses `CompanyName.ProductName` dot-notation. No final convention was chosen yet — this was an exploratory question.
 
-**1993** " 🔵 **Preview server not running after rebuild — needs restart before asset verification**
-After rebuild, the primary session tried to verify Base Hitz PNGs via the preview server but it wasn't running. Standard pattern: rebuild kills nothing, but earlier preview process from session 22157 had already exited. Restart needed.
+**2178** " 🔵 **SugarbuzzLabs Site Repo Structure**
+The SugarbuzzLabs marketing/company site lives under Patrick's personal GitHub account (phoydar/sugarbuzzlabs), not a dedicated SugarBuzzLabs org. Built with Vite, deployed to Netlify. This is relevant context for the repo naming discussion — the existing site repo uses no platform suffix, just the brand name. A fresh org-level GitHub account is being planned which may warrant a renaming or migration strategy.
 
 
-Access 460k tokens of past work via get_observations([IDs]) or mem-search skill.
+Access 468k tokens of past work via get_observations([IDs]) or mem-search skill.
 </claude-mem-context>
