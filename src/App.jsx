@@ -11,6 +11,7 @@ import {
   AppSection,
 } from './components/sections.jsx';
 import { APPS } from './data/siteData.jsx';
+import { WebWork } from './components/sections.jsx';
 
 export default function App() {
   React.useEffect(() => {
@@ -30,6 +31,7 @@ export default function App() {
         <Gallery dark />
         <Pricing />
         <Studio />
+        <WebWork />
         <Waitlist />
         <FAQ />
       </main>

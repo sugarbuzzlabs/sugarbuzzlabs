@@ -1,0 +1,267 @@
+[1mdiff --git a/package-lock.json b/package-lock.json[m
+[1mindex 76b856f..3bfec40 100644[m
+[1m--- a/package-lock.json[m
+[1m+++ b/package-lock.json[m
+[36m@@ -43,7 +43,6 @@[m
+       "resolved": "https://registry.npmjs.org/@babel/core/-/core-7.29.7.tgz",[m
+       "integrity": "sha512-RgHBCvtjbOK2gXSNBNIkNoEc9qoVEtau3hj8gEqKQuL3HZAibKarWFEI3Lfm6EYKkLalOh8eSrj9b+ch9H/VBA==",[m
+       "license": "MIT",[m
+[31m-      "peer": true,[m
+       "dependencies": {[m
+         "@babel/code-frame": "^7.29.7",[m
+         "@babel/generator": "^7.29.7",[m
+[36m@@ -1169,7 +1168,6 @@[m
+         }[m
+       ],[m
+       "license": "MIT",[m
+[31m-      "peer": true,[m
+       "dependencies": {[m
+         "baseline-browser-mapping": "^2.10.12",[m
+         "caniuse-lite": "^1.0.30001782",[m
+[36m@@ -1418,7 +1416,6 @@[m
+       "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.4.tgz",[m
+       "integrity": "sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==",[m
+       "license": "MIT",[m
+[31m-      "peer": true,[m
+       "engines": {[m
+         "node": ">=12"[m
+       },[m
+[36m@@ -1459,7 +1456,6 @@[m
+       "resolved": "https://registry.npmjs.org/react/-/react-18.3.1.tgz",[m
+       "integrity": "sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==",[m
+       "license": "MIT",[m
+[31m-      "peer": true,[m
+       "dependencies": {[m
+         "loose-envify": "^1.1.0"[m
+       },[m
+[36m@@ -1611,7 +1607,6 @@[m
+       "resolved": "https://registry.npmjs.org/vite/-/vite-6.4.3.tgz",[m
+       "integrity": "sha512-NTKlcQjlAK7MlQoyb6LgaqHc8sso/pVyUJYWMws3jg21uTJw/LddqIFPcPqP6PzpgbIcZyKI85sFE4HBrQDA8A==",[m
+       "license": "MIT",[m
+[31m-      "peer": true,[m
+       "dependencies": {[m
+         "esbuild": "^0.25.0",[m
+         "fdir": "^6.4.4",[m
+[1mdiff --git a/src/App.jsx b/src/App.jsx[m
+[1mindex f7faf41..d2c15d1 100644[m
+[1m--- a/src/App.jsx[m
+[1m+++ b/src/App.jsx[m
+[36m@@ -10,6 +10,7 @@[m [mimport {[m
+   Waitlist,[m
+   AppSection,[m
+ } from './components/sections.jsx';[m
+[32m+[m[32mimport { WebWork } from './components/sections.jsx';[m
+ import { APPS } from './data/siteData.jsx';[m
+ [m
+ export default function App() {[m
+[36m@@ -30,6 +31,7 @@[m [mexport default function App() {[m
+         <Gallery dark />[m
+         <Pricing />[m
+         <Studio />[m
+[32m+[m[32m        <WebWork />[m
+         <Waitlist />[m
+         <FAQ />[m
+       </main>[m
+[1mdiff --git a/src/components/sections.jsx b/src/components/sections.jsx[m
+[1mindex 3f22e38..e6d337e 100644[m
+[1m--- a/src/components/sections.jsx[m
+[1m+++ b/src/components/sections.jsx[m
+[36m@@ -12,6 +12,7 @@[m [mimport {[m
+   Reveal,[m
+   Wordmark,[m
+ } from '../data/siteData.jsx';[m
+[32m+[m[32mimport { WEB_PROJECTS } from '../data/siteData.jsx';[m
+ [m
+ export function goTo(id) {[m
+   const el = document.getElementById(id);[m
+[36m@@ -86,6 +87,7 @@[m [mexport function Header() {[m
+           <a href="#pricing" onClick={(event) => { event.preventDefault(); goTo('pricing'); }}>Pricing</a>[m
+           <a href="#about" onClick={(event) => { event.preventDefault(); goTo('about'); }}>Studio</a>[m
+           <a href="#faq" onClick={(event) => { event.preventDefault(); goTo('faq'); }}>FAQ</a>[m
+[32m+[m[32m          <a href="#web" onClick={(event) => { event.preventDefault(); goTo('web'); }}>Web</a>[m
+         </nav>[m
+         <div className="header-cta">[m
+           <a className="btn btn-ghost btn-sm" href="#apps" onClick={(event) => { event.preventDefault(); goTo('apps'); }}>See the apps</a>[m
+[36m@@ -352,6 +354,47 @@[m [mexport function Studio() {[m
+   );[m
+ }[m
+ [m
+[32m+[m[32mexport function WebWork() {[m
+[32m+[m[32m  return ([m
+[32m+[m[32m    <section className="section web-work" id="web" style={{ background: 'var(--bg-paper)', borderTop: '1px solid var(--border)' }}>[m
+[32m+[m[32m      <div className="wrap">[m
+[32m+[m[32m        <Reveal className="sec-head">[m
+[32m+[m[32m          <p className="eyebrow"><span className="dot" />Web Studio</p>[m
+[32m+[m[32m          <h2 className="h2">We build for local businesses too.</h2>[m
+[32m+[m[32m          <p className="lede" style={{ marginTop: 12 }}>[m
+[32m+[m[32m            React + Tailwind sites that actually convert — designed in a day, pitched as a proof of concept. Every project below started as a real business with a bad website.[m
+[32m+[m[32m          </p>[m
+[32m+[m[32m        </Reveal>[m
+[32m+[m[32m        <div className="web-grid">[m
+[32m+[m[32m          {WEB_PROJECTS.map((project, i) => ([m
+[32m+[m[32m            <Reveal key={project.id} delay={i * 80} className="web-card">[m
+[32m+[m[32m              <div className="web-card-img">[m
+[32m+[m[32m                <img src={project.img} alt={project.category} loading="lazy" />[m
+[32m+[m[32m              </div>[m
+[32m+[m[32m              <div className="web-card-body">[m
+[32m+[m[32m                <span className="web-cat">{project.category}</span>[m
+[32m+[m[32m                <h3 className="web-headline">{project.headline}</h3>[m
+[32m+[m[32m                <p className="web-desc">{project.desc}</p>[m
+[32m+[m[32m                <div className="web-tags">[m
+[32m+[m[32m                  {project.tags.map((tag) => ([m
+[32m+[m[32m                    <span key={tag} className="web-tag">{tag}</span>[m
+[32m+[m[32m                  ))}[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m              </div>[m
+[32m+[m[32m            </Reveal>[m
+[32m+[m[32m          ))}[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m        <Reveal delay={240} style={{ marginTop: 48, textAlign: 'center' }}>[m
+[32m+[m[32m          <p className="lede" style={{ marginBottom: 20, color: 'var(--fg-2)' }}>[m
+[32m+[m[32m            Interested in a site for your business?[m
+[32m+[m[32m          </p>[m
+[32m+[m[32m          <a className="btn btn-primary" href={LINKS.contact}>Let's talk <Icon name="arrowUR" style={{ width: 16, height: 16, display: 'inline', verticalAlign: 'middle', marginLeft: 4 }} /></a>[m
+[32m+[m[32m        </Reveal>[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m    </section>[m
+[32m+[m[32m  );[m
+[32m+[m[32m}[m
+[32m+[m
+ export function Waitlist() {[m
+   const [email, setEmail] = useState('');[m
+   const [picks, setPicks] = useState({ dailyset: true, stash: true, basehitz: false });[m
+[36m@@ -545,6 +588,7 @@[m [mexport function Footer() {[m
+             <a href="#about" onClick={(event) => { event.preventDefault(); goTo('about'); }}>About</a>[m
+             <a href="#pricing" onClick={(event) => { event.preventDefault(); goTo('pricing'); }}>Pricing</a>[m
+             <a href="#faq" onClick={(event) => { event.preventDefault(); goTo('faq'); }}>FAQ</a>[m
+[32m+[m[32m            <a href="#web" onClick={(event) => { event.preventDefault(); goTo('web'); }}>Web Studio</a>[m
+           </div>[m
+           <div className="footer-col">[m
+             <h4>Connect</h4>[m
+[1mdiff --git a/src/data/siteData.jsx b/src/data/siteData.jsx[m
+[1mindex 998e3dc..dc6498c 100644[m
+[1m--- a/src/data/siteData.jsx[m
+[1m+++ b/src/data/siteData.jsx[m
+[36m@@ -340,3 +340,30 @@[m [mexport const PRICING = [[m
+   { name: 'Base Hitz', cat: 'Youth sports', amt: 'Free', note: 'Free to download on the App Store. Works with your existing Apple Music library.', cta: 'Available on iOS', live: true, featured: true },[m
+   { name: 'Stash', cat: 'Home & storage', amt: 'One-time', note: 'Buy once and organize everything. Your data never leaves your phone.', cta: 'Coming soon', live: false },[m
+ ];[m
+[32m+[m
+[32m+[m[32mexport const WEB_PROJECTS = [[m
+[32m+[m[32m  {[m
+[32m+[m[32m    id: 'contractor',[m
+[32m+[m[32m    category: 'Contractor Services',[m
+[32m+[m[32m    headline: 'Authority redesign for a regional contractor.',[m
+[32m+[m[32m    desc: 'Multi-page site with service area coverage, trust signals, animated proof stats, and an online estimate request form. Replaced a static brochure with a lead-generating machine.',[m
+[32m+[m[32m    tags: ['React', 'Tailwind', 'Mobile-first', 'POC'],[m
+[32m+[m[32m    img: '/manus-storage/contractor-redesign_fc60e496.png',[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    id: 'specialty',[m
+[32m+[m[32m    category: 'Specialty Retail',[m
+[32m+[m[32m    headline: 'Dark luxury redesign for a specialty retailer.',[m
+[32m+[m[32m    desc: 'Full-service site with service catalog, online quote request, testimonials, and a mobile-optimized contact flow. Took a dated template and replaced it with a brand that matches the premium product.',[m
+[32m+[m[32m    tags: ['React', 'Tailwind', 'Dark theme', 'POC'],[m
+[32m+[m[32m    img: '/manus-storage/specialty-retail-redesign_9bf37286.png',[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    id: 'lifestyle',[m
+[32m+[m[32m    category: 'Lifestyle Retail',[m
+[32m+[m[32m    headline: 'Warm aspirational redesign for a showroom retailer.',[m
+[32m+[m[32m    desc: 'Six-page lifestyle site with product catalog, project gallery, service pages, and a backyard design consultation CTA — all missing from the original. Built to convert high-consideration buyers before they walk in.',[m
+[32m+[m[32m    tags: ['React', 'Tailwind', 'Lifestyle', 'POC'],[m
+[32m+[m[32m    img: '/manus-storage/lifestyle-retail-redesign_549bbd44.png',[m
+[32m+[m[32m  },[m
+[32m+[m[32m];[m
+[1mdiff --git a/src/styles/site.css b/src/styles/site.css[m
+[1mindex 67201b0..b12f2f9 100644[m
+[1m--- a/src/styles/site.css[m
+[1m+++ b/src/styles/site.css[m
+[36m@@ -606,3 +606,87 @@[m [mbutton { font-family: inherit; }[m
+ .sec-head.center { margin-inline: auto; text-align: center; }[m
+ .sec-head .eyebrow { margin-bottom: 16px; }[m
+ .sec-head .h2 { margin-bottom: 16px; }[m
+[32m+[m
+[32m+[m[32m/* ---- Web Studio section -------------------------------- */[m
+[32m+[m[32m.web-grid {[m
+[32m+[m[32m  display: grid;[m
+[32m+[m[32m  grid-template-columns: repeat(3, 1fr);[m
+[32m+[m[32m  gap: 28px;[m
+[32m+[m[32m  margin-top: 52px;[m
+[32m+[m[32m}[m
+[32m+[m[32m@media (max-width: 900px) { .web-grid { grid-template-columns: 1fr 1fr; } }[m
+[32m+[m[32m@media (max-width: 560px) { .web-grid { grid-template-columns: 1fr; } }[m
+[32m+[m
+[32m+[m[32m.web-card {[m
+[32m+[m[32m  background: var(--surface-1);[m
+[32m+[m[32m  border: 1px solid var(--border);[m
+[32m+[m[32m  border-radius: 12px;[m
+[32m+[m[32m  overflow: hidden;[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m  flex-direction: column;[m
+[32m+[m[32m  transition: border-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);[m
+[32m+[m[32m}[m
+[32m+[m[32m.web-card:hover { border-color: var(--border-strong); transform: translateY(-4px); }[m
+[32m+[m
+[32m+[m[32m.web-card-img {[m
+[32m+[m[32m  width: 100%;[m
+[32m+[m[32m  aspect-ratio: 16 / 10;[m
+[32m+[m[32m  overflow: hidden;[m
+[32m+[m[32m  background: var(--surface-2);[m
+[32m+[m[32m}[m
+[32m+[m[32m.web-card-img img {[m
+[32m+[m[32m  width: 100%;[m
+[32m+[m[32m  height: 100%;[m
+[32m+[m[32m  object-fit: cover;[m
+[32m+[m[32m  object-position: top;[m
+[32m+[m[32m  display: block;[m
+[32m+[m[32m  transition: transform 0.5s var(--ease-out);[m
+[32m+[m[32m}[m
+[32m+[m[32m.web-card:hover .web-card-img img { transform: scale(1.03); }[m
+[32m+[m
+[32m+[m[32m.web-card-body {[m
+[32m+[m[32m  padding: 20px 22px 24px;[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m  flex-direction: column;[m
+[32m+[m[32m  flex: 1;[m
+[32m+[m[32m}[m
+[32m+[m[32m.web-cat {[m
+[32m+[m[32m  font-size: 11.5px;[m
+[32m+[m[32m  letter-spacing: var(--track-eyebrow);[m
+[32m+[m[32m  text-transform: uppercase;[m
+[32m+[m[32m  color: var(--buzz);[m
+[32m+[m[32m  font-weight: var(--weight-semibold);[m
+[32m+[m[32m  margin-bottom: 8px;[m
+[32m+[m[32m  display: block;[m
+[32m+[m[32m}[m
+[32m+[m[32m.web-headline {[m
+[32m+[m[32m  font-size: 17px;[m
+[32m+[m[32m  font-weight: var(--weight-semibold);[m
+[32m+[m[32m  color: var(--fg-1);[m
+[32m+[m[32m  letter-spacing: -0.02em;[m
+[32m+[m[32m  line-height: 1.35;[m
+[32m+[m[32m  margin: 0 0 10px;[m
+[32m+[m[32m}[m
+[32m+[m[32m.web-desc {[m
+[32m+[m[32m  font-size: 14px;[m
+[32m+[m[32m  color: var(--fg-2);[m
+[32m+[m[32m  line-height: 1.6;[m
+[32m+[m[32m  margin: 0 0 16px;[m
+[32m+[m[32m  flex: 1;[m
+[32m+[m[32m}[m
+[32m+[m[32m.web-tags {[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m  flex-wrap: wrap;[m
+[32m+[m[32m  gap: 6px;[m
+[32m+[m[32m  margin-top: auto;[m
+[32m+[m[32m}[m
+[32m+[m[32m.web-tag {[m
+[32m+[m[32m  font-size: 11.5px;[m
+[32m+[m[32m  font-weight: var(--weight-medium);[m
+[32m+[m[32m  color: var(--fg-3);[m
+[32m+[m[32m  background: var(--surface-2);[m
+[32m+[m[32m  border: 1px solid var(--border);[m
+[32m+[m[32m  border-radius: 4px;[m
+[32m+[m[32m  padding: 3px 8px;[m
+[32m+[m[32m  letter-spacing: 0.01em;[m
+[32m+[m[32m}[m

@@ -12,6 +12,7 @@ import {
   Reveal,
   Wordmark,
 } from '../data/siteData.jsx';
+import { WEB_PROJECTS } from '../data/siteData.jsx';
 
 export function goTo(id) {
   const el = document.getElementById(id);
@@ -83,6 +84,7 @@ export function Header() {
         </a>
         <nav className="nav">
           <a href="#apps" onClick={(event) => { event.preventDefault(); goTo('apps'); }}>Apps</a>
+          <a href="#web" onClick={(event) => { event.preventDefault(); goTo('web'); }}>Web</a>
           <a href="#pricing" onClick={(event) => { event.preventDefault(); goTo('pricing'); }}>Pricing</a>
           <a href="#about" onClick={(event) => { event.preventDefault(); goTo('about'); }}>Studio</a>
           <a href="#faq" onClick={(event) => { event.preventDefault(); goTo('faq'); }}>FAQ</a>
@@ -352,6 +354,48 @@ export function Studio() {
   );
 }
 
+export function WebWork() {
+  return (
+    <section className="section web-work" id="web" style={{ background: 'var(--bg-paper)', borderTop: '1px solid var(--border)' }}>
+      <div className="wrap">
+        <Reveal className="sec-head">
+          <p className="eyebrow"><span className="dot" />Web Studio</p>
+          <h2 className="h2">We build for local businesses too.</h2>
+          <p className="lede" style={{ marginTop: 12 }}>
+            React + Tailwind sites that actually convert — designed in a day, pitched as a proof of concept. Every project below started as a real business with a bad website.
+          </p>
+        </Reveal>
+        <div className="web-grid">
+          {WEB_PROJECTS.map((project, i) => (
+            <Reveal key={project.id} delay={i * 80} className="web-card">
+              <div className="web-card-img">
+                <img src={project.img} alt={project.category} loading="lazy" />
+              </div>
+              <div className="web-card-body">
+                <span className="web-cat">{project.category}</span>
+                <h3 className="web-headline">{project.headline}</h3>
+                <p className="web-desc">{project.desc}</p>
+                <div className="web-tags">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="web-tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal delay={240} style={{ marginTop: 48, textAlign: 'center' }}>
+          <p className="lede" style={{ marginBottom: 20, color: 'var(--fg-2)' }}>
+            Interested in a site for your business?
+          </p>
+          <a className="btn btn-primary" href={LINKS.contact}>Let's talk →</a>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+
 export function Waitlist() {
   const [email, setEmail] = useState('');
   const [picks, setPicks] = useState({ dailyset: true, stash: true, basehitz: false });
@@ -542,6 +586,7 @@ export function Footer() {
           </div>
           <div className="footer-col">
             <h4>Studio</h4>
+            <a href="#web" onClick={(event) => { event.preventDefault(); goTo('web'); }}>Web Studio</a>
             <a href="#about" onClick={(event) => { event.preventDefault(); goTo('about'); }}>About</a>
             <a href="#pricing" onClick={(event) => { event.preventDefault(); goTo('pricing'); }}>Pricing</a>
             <a href="#faq" onClick={(event) => { event.preventDefault(); goTo('faq'); }}>FAQ</a>

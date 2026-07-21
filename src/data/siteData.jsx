@@ -340,3 +340,30 @@ export const PRICING = [
   { name: 'Base Hitz', cat: 'Youth sports', amt: 'Free', note: 'Free to download on the App Store. Works with your existing Apple Music library.', cta: 'Available on iOS', live: true, featured: true },
   { name: 'Stash', cat: 'Home & storage', amt: 'One-time', note: 'Buy once and organize everything. Your data never leaves your phone.', cta: 'Coming soon', live: false },
 ];
+
+export const WEB_PROJECTS = [
+  {
+    id: 'contractor',
+    category: 'Contractor Services',
+    headline: 'Authority redesign for a regional contractor.',
+    desc: 'Multi-page site with service area coverage, trust signals, animated proof stats, and an online estimate request form. Replaced a static brochure with a lead-generating machine.',
+    tags: ['React', 'Tailwind', 'Mobile-first', 'POC'],
+    img: '/manus-storage/contractor-redesign_fc60e496.png',
+  },
+  {
+    id: 'specialty',
+    category: 'Specialty Retail',
+    headline: 'Dark luxury redesign for a specialty retailer.',
+    desc: 'Full-service site with service catalog, online quote request, testimonials, and a mobile-optimized contact flow. Took a dated template and replaced it with a brand that matches the premium product.',
+    tags: ['React', 'Tailwind', 'Dark theme', 'POC'],
+    img: '/manus-storage/specialty-retail-redesign_9bf37286.png',
+  },
+  {
+    id: 'lifestyle',
+    category: 'Lifestyle Retail',
+    headline: 'Warm aspirational redesign for a showroom retailer.',
+    desc: 'Six-page lifestyle site with product catalog, project gallery, service pages, and a backyard design consultation CTA — all missing from the original. Built to convert high-consideration buyers before they walk in.',
+    tags: ['React', 'Tailwind', 'Lifestyle', 'POC'],
+    img: '/manus-storage/lifestyle-retail-redesign_549bbd44.png',
+  },
+];
