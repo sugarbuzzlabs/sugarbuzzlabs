@@ -154,7 +154,7 @@
 [32m+[m[32m    headline: 'Authority redesign for a regional contractor.',[m
 [32m+[m[32m    desc: 'Multi-page site with service area coverage, trust signals, animated proof stats, and an online estimate request form. Replaced a static brochure with a lead-generating machine.',[m
 [32m+[m[32m    tags: ['React', 'Tailwind', 'Mobile-first', 'POC'],[m
-[32m+[m[32m    img: '/manus-storage/contractor-redesign_fc60e496.png',[m
+[32m+[m[32m    img: '/assets/web/contractor-redesign_fc60e496.png',[m
 [32m+[m[32m  },[m
 [32m+[m[32m  {[m
 [32m+[m[32m    id: 'specialty',[m
@@ -162,7 +162,7 @@
 [32m+[m[32m    headline: 'Dark luxury redesign for a specialty retailer.',[m
 [32m+[m[32m    desc: 'Full-service site with service catalog, online quote request, testimonials, and a mobile-optimized contact flow. Took a dated template and replaced it with a brand that matches the premium product.',[m
 [32m+[m[32m    tags: ['React', 'Tailwind', 'Dark theme', 'POC'],[m
-[32m+[m[32m    img: '/manus-storage/specialty-retail-redesign_9bf37286.png',[m
+[32m+[m[32m    img: '/assets/web/specialty-retail-redesign_9bf37286.png',[m
 [32m+[m[32m  },[m
 [32m+[m[32m  {[m
 [32m+[m[32m    id: 'lifestyle',[m
@@ -170,7 +170,7 @@
 [32m+[m[32m    headline: 'Warm aspirational redesign for a showroom retailer.',[m
 [32m+[m[32m    desc: 'Six-page lifestyle site with product catalog, project gallery, service pages, and a backyard design consultation CTA — all missing from the original. Built to convert high-consideration buyers before they walk in.',[m
 [32m+[m[32m    tags: ['React', 'Tailwind', 'Lifestyle', 'POC'],[m
-[32m+[m[32m    img: '/manus-storage/lifestyle-retail-redesign_549bbd44.png',[m
+[32m+[m[32m    img: '/assets/web/lifestyle-retail-redesign_549bbd44.png',[m
 [32m+[m[32m  },[m
 [32m+[m[32m];[m
 [1mdiff --git a/src/styles/site.css b/src/styles/site.css[m

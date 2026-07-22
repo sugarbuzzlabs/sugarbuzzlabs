@@ -348,7 +348,7 @@ export const WEB_PROJECTS = [
     headline: 'Authority redesign for a regional contractor.',
     desc: 'Multi-page site with service area coverage, trust signals, animated proof stats, and an online estimate request form. Replaced a static brochure with a lead-generating machine.',
     tags: ['React', 'Tailwind', 'Mobile-first', 'POC'],
-    img: '/manus-storage/contractor-redesign_fc60e496.png',
+    img: '/assets/web/contractor-redesign_fc60e496.png',
   },
   {
     id: 'specialty',
@@ -356,7 +356,7 @@ export const WEB_PROJECTS = [
     headline: 'Dark luxury redesign for a specialty retailer.',
     desc: 'Full-service site with service catalog, online quote request, testimonials, and a mobile-optimized contact flow. Took a dated template and replaced it with a brand that matches the premium product.',
     tags: ['React', 'Tailwind', 'Dark theme', 'POC'],
-    img: '/manus-storage/specialty-retail-redesign_9bf37286.png',
+    img: '/assets/web/specialty-retail-redesign_9bf37286.png',
   },
   {
     id: 'lifestyle',
@@ -364,6 +364,6 @@ export const WEB_PROJECTS = [
     headline: 'Warm aspirational redesign for a showroom retailer.',
     desc: 'Six-page lifestyle site with product catalog, project gallery, service pages, and a backyard design consultation CTA — all missing from the original. Built to convert high-consideration buyers before they walk in.',
     tags: ['React', 'Tailwind', 'Lifestyle', 'POC'],
-    img: '/manus-storage/lifestyle-retail-redesign_549bbd44.png',
+    img: '/assets/web/lifestyle-retail-redesign_549bbd44.png',
   },
 ];
